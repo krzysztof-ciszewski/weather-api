@@ -1,0 +1,31 @@
+App\Model\SearchHistory\Request\NewEntry:
+  properties:
+    city:
+      - NotNull: ~
+
+App\Model\SearchHistory\AbstractEntry:
+  properties:
+    temperature:
+      - NotBlank: ~
+      - Type: float
+    cloudiness:
+      - NotBlank: ~
+      - Type: float
+    windSpeed:
+      - NotBlank: ~
+      - Type: float
+    description:
+      - NotBlank: ~
+      - Type: string
+
+App\Model\SearchHistory\Request\City:
+  properties:
+    name:
+      - NotBlank: ~
+      - Type: string
+    lat:
+      - NotBlank: ~
+      - Type: float
+    lon:
+      - NotBlank: ~
+      - Type: float

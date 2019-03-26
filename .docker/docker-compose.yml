@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  php:
+    build: .
+    volumes:
+      - "../:/app"
+    command: sh -c "composer install --working-dir /app && php /app/bin/console -vvv server:run 0.0.0.0:8000"
+    ports:
+      - ${PORT}:8000
+    environment:
+      XDEBUG_CONFIG: ${XDEBUG_CONFIG}
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: example

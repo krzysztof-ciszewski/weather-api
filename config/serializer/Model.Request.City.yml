@@ -1,0 +1,12 @@
+App\Model\Request\City:
+  exclusion_policy: ALL
+  properties:
+    name:
+      type: string
+      expose: true
+    lat:
+      type: float
+      expose: true
+    lon:
+      type: float
+      expose: true

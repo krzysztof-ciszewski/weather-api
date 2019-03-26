@@ -1,0 +1,26 @@
+App\Entity\Entry:
+  type: entity
+  repositoryClass: App\Repository\EntryRepository
+  table: entry
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    temperature:
+      type: float
+    cloudiness:
+      type: float
+    windSpeed:
+      type: float
+    description:
+      type: string
+    requestTime:
+      type: integer
+    cityName:
+      type: string
+    cityLat:
+      type: float
+    cityLon:
+      type: float

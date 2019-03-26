@@ -1,0 +1,9 @@
+create:
+    methods: POST
+    path: /searches
+    controller: App\Controller\CreateEntry
+
+list:
+    methods: GET
+    path: /searches/{page}
+    controller: App\Controller\GetEntryList

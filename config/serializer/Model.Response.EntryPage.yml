@@ -1,0 +1,9 @@
+App\Model\Response\EntryPage:
+  exclusion_policy: ALL
+  properties:
+    items:
+      type: array<App\Model\Response\Entry>
+      expose: true
+    total:
+      type: integer
+      expose: true

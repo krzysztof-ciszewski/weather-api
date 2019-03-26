@@ -1,0 +1,9 @@
+App\Model\Response\Entry:
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: int
+      expose: true
+    cityName:
+      type: string
+      expose: true
