@@ -5,6 +5,11 @@ namespace App\Model\Response;
 class EntryPage implements \Countable
 {
     /**
+     * @var int
+     */
+    protected $pageSize;
+
+    /**
      * @var Entry[]
      */
     private $items;
@@ -19,7 +24,7 @@ class EntryPage implements \Countable
      */
     private $total;
 
-    public function __construct(array $items, int $total)
+    public function __construct(array $items, int $total, int $pageSize)
     {
         array_map(
             function (Entry $entry) {
@@ -29,6 +34,7 @@ class EntryPage implements \Countable
         );
         $this->size = count($items);
         $this->total = $total;
+        $this->pageSize = $pageSize;
     }
 
     /**
@@ -61,6 +67,14 @@ class EntryPage implements \Countable
     public function getTotal(): int
     {
         return $this->total;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPageSize(): int
+    {
+        return $this->pageSize;
     }
 
     /**

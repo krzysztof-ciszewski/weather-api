@@ -20,7 +20,7 @@ class EntryPageFactory implements EntryPageFactoryInterface
     /**
      * @inheritdoc
      */
-    public function create(array $entries, int $total): EntryPage
+    public function create(array $entries, int $total, int $pageSize): EntryPage
     {
         return new EntryPage(
             array_map(
@@ -28,7 +28,8 @@ class EntryPageFactory implements EntryPageFactoryInterface
                     return $this->entryFactory->create($entry);
                 },
                 $entries
-            ), $total
+            ), $total,
+            $pageSize
         );
     }
 }

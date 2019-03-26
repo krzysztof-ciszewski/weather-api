@@ -34,9 +34,12 @@ class EntryPageProvider implements EntryPageProviderInterface
 
     public function getPage(int $page): EntryPage
     {
-        return $this->entryPageFactory->create(
+        $return = $this->entryPageFactory->create(
             $this->entryProvider->getPage($page, $this->pageSize),
-            $this->entryProvider->getTotal()
+            $this->entryProvider->getTotal(),
+            $this->pageSize
         );
+        
+        return $return;
     }
 }

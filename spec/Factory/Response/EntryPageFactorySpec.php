@@ -35,9 +35,10 @@ class EntryPageFactorySpec extends ObjectBehavior
         $responseItems = [$entryResponse1, $entryResponse2];
         $entryFactory->create($entry1)->willReturn($entryResponse1);
         $entryFactory->create($entry2)->willReturn($entryResponse2);
-        $list = $this->create($items, 4);
+        $list = $this->create($items, 4, 2);
         $list->getItems()->shouldReturn($responseItems);
         $list->count()->shouldReturn(2);
         $list->getTotal()->shouldReturn(4);
+        $list->getPageSize()->shouldReturn(2);
     }
 }

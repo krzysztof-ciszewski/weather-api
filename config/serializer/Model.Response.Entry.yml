@@ -7,3 +7,4 @@ App\Model\Response\Entry:
     cityName:
       type: string
       expose: true
+      serialized_name: cityName

@@ -7,3 +7,7 @@ App\Model\Response\EntryPage:
     total:
       type: integer
       expose: true
+    pageSize:
+      type: integer
+      expose: true
+      serialized_name: pageSize

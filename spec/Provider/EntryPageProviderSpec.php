@@ -31,12 +31,12 @@ class EntryPageProviderSpec extends ObjectBehavior
         Entry $entry2
     ): void {
         $entries = [$entry1->getWrappedObject(), $entry2->getWrappedObject()];
-        $list = new EntryPage($entries, 4);
+        $list = new EntryPage($entries, 4, 10);
 
         $provider->getPage(1, 10)->willReturn($entries);
         $provider->getTotal()->willReturn(4);
 
-        $entryListFactory->create($entries, 4)->willReturn($list);
+        $entryListFactory->create($entries, 4, 10)->willReturn($list);
 
         $resultList = $this->getPage(1);
         $resultList->getItems()->shouldReturn($list->getItems());
